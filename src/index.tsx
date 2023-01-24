@@ -2,12 +2,19 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 //jsx
-const h1 = <h1 id="title">Hello react.js</h1>
+const h1 = (
+    <h1 id="title" className="dfdf">
+        Hello React.js
+    </h1>
+)
+
+let a = 10
+let b = 'Hello test'
 
 const list = (
     <ul>
-        <li>List item 1</li>
-        <li>List item 2</li>
+        <li>List item {a + 10 + 10}</li>
+        <li>List item {b}</li>
         <li>List item 3</li>
     </ul>
 )
