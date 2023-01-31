@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Content from './Content'
+import { Content } from './Content'
 
 //jsx  Title > h1
 //Content => div > p * 2
