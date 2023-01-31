@@ -11,7 +11,15 @@ function App() {
         <>
             <Title text="React" />
             <Title text="TS" />
-            <Content text1="Hello world1" text2="Hello world2" year={2023} />
+            <Content
+                text1={
+                    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem ut excepturi, cupiditate nihil, odio cum ipsum id obcaecati sed temporibus a repellendus ullam, dolores commodi eius explicabo laboriosam dolor aspernatur?'
+                }
+                text2={
+                    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem ut excepturi, cupiditate nihil, odio cum ipsum id obcaecati sed temporibus a repellendus ullam, dolores commodi eius explicabo laboriosam dolor aspernatur?'
+                }
+                year={2023}
+            />
         </>
     )
 }
