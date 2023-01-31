@@ -4,24 +4,27 @@ import ReactDOM from 'react-dom/client'
 //jsx  Title > h1
 //Content => div > p * 2
 
-const Title = () => {
-    return <h1>Hello App.js</h1>
+interface ITitleProps {
+    text: string
 }
-const Content = () => {
+
+type ContentProps = {
+    text1: string
+    text2: string
+    year: number
+}
+
+const Title = (props: ITitleProps) => {
+    console.log(props)
+    return <h1>Hello {props.text}</h1>
+}
+
+const Content = (props: ContentProps) => {
     return (
         <React.Fragment>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-                asperiores eligendi, non nostrum recusandae assumenda vel velit
-                iste veniam ipsa, a nesciunt possimus fugiat laboriosam
-                cupiditate enim, provident quod blanditiis.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reiciendis quis voluptates totam placeat voluptatum aut itaque
-                autem enim, nulla dolorum sunt odit necessitatibus eligendi,
-                voluptatibus ducimus, illo in reprehenderit non!
-            </p>
+            <p>{props.text1}</p>
+            <p>{props.text2}</p>
+            <div>Year:{props.year}</div>
         </React.Fragment>
     )
 }
@@ -29,8 +32,9 @@ const Content = () => {
 function App() {
     return (
         <>
-            <Title />
-            <Content />
+            <Title text="React" />
+            <Title text="TS" />
+            <Content text1="Hello world1" text2="Hello world2" year={2023} />
         </>
     )
 }
