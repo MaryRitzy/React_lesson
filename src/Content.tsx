@@ -7,12 +7,13 @@ type Props = {
 }
 
 export const Content = (props: Props) => {
+    let data = true // false
     return (
         <>
             <p
                 style={{
-                    color: 'red',
-                    backgroundColor: 'white',
+                    color: data ? 'yellow' : 'white',
+                    backgroundColor: 'green',
                     padding: '15px',
                 }}
             >
