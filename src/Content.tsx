@@ -1,5 +1,5 @@
 import React from 'react'
-import './Content.css'
+import classes from './Content.module.css'
 
 type Props = {
     text1: string
@@ -10,7 +10,7 @@ type Props = {
 export const Content = (props: Props) => {
     return (
         <>
-            <p className="content">{props.text1}</p>
+            <p className={`${classes.content}`}>{props.text1}</p>
             <p>{props.text2}</p>
             <div>Year:{props.year}</div>
         </>
