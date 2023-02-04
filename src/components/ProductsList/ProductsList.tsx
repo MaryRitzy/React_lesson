@@ -10,18 +10,36 @@ const ProductsList = (props: Props) => {
                 Products List
             </Typography>
 
-            <Grid container spacing={3}>
+            <Grid container>
                 <Grid item xs={12} sm={6} md={4}>
                     {' '}
-                    <ProductsListItem />
+                    <ProductsListItem
+                        title="iPhone 14 Pro"
+                        description="This is iPhone 14 Pro"
+                        type="phone"
+                        capacity="256"
+                        price={1200}
+                    />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
                     {' '}
-                    <ProductsListItem />
+                    <ProductsListItem
+                        title="iPhone 12 Pro"
+                        description="This is iPhone 12 Pro"
+                        type="phone"
+                        capacity="512"
+                        price={1000}
+                    />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
                     {' '}
-                    <ProductsListItem />
+                    <ProductsListItem
+                        title="iPhone 13 Pro"
+                        description="This is iPhone 13 Pro"
+                        type="phone"
+                        capacity="128"
+                        price={500}
+                    />
                 </Grid>
             </Grid>
         </>
