@@ -5,6 +5,7 @@ import productsArray from 'utils/productsArray'
 type Props = {}
 
 type ProductProps = {
+    id: number
     title: string
     description: string
     type: string
@@ -23,6 +24,7 @@ const ProductsList = (props: Props) => {
                 {productsArray.map(
                     (
                         {
+                            id,
                             title,
                             description,
                             type,
