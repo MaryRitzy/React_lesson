@@ -22,6 +22,7 @@ const App = (props: Props) => {
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header cartData={cartData} />
+            <button></button>
             <Main />
             <Footer />
         </StyledEngineProvider>
