@@ -7,7 +7,7 @@ import {
 } from '@mui/material'
 import './ProductsListItem.scss'
 import React, { useState } from 'react'
-
+import '../../container/App/App.tsx'
 type Props = {
     title: string
     description: string
@@ -15,6 +15,7 @@ type Props = {
     capacity: string
     price: number
     image: string
+    addProductToCart: (count: number, price: number) => void
 }
 
 const ProductsListItem = ({
@@ -24,6 +25,7 @@ const ProductsListItem = ({
     capacity,
     price,
     image,
+    addProductToCart,
 }: Props) => {
     const [count, setCount] = useState<number>(1)
 
@@ -64,7 +66,12 @@ const ProductsListItem = ({
                 </div>
             </CardContent>
             <CardActions className="product-btn-wrap">
-                <Button variant="outlined">Add to cart</Button>
+                <Button
+                    variant="outlined"
+                    onClick={() => addProductToCart(count, price)}
+                >
+                    Add to cart
+                </Button>
             </CardActions>
         </Card>
     )
