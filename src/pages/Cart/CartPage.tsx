@@ -15,13 +15,26 @@ const CartPage = ({
 }: Props) => {
     return (
         <div>
-            {Object.keys(productsInCart).map((productId) => (
-                <div key={productId}>
-                    {productObject[parseInt(productId)].title} :{' '}
-                    {productsInCart[parseInt(productId)]} :{' '}
-                    {productObject[parseInt(productId)].price}
-                </div>
-            ))}
+            <div>
+                {Object.keys(productsInCart).map((productId) => (
+                    <div key={productId}>
+                        {productObject[parseInt(productId)].title} :{' '}
+                        {productsInCart[parseInt(productId)]} :{' '}
+                        {productObject[parseInt(productId)].price}
+                    </div>
+                ))}
+            </div>
+            <div>
+                Total:{' '}
+                {Object.keys(productsInCart).reduce(
+                    (total, productId) =>
+                        total +
+                        productObject[parseInt(productId)].price *
+                            productsInCart[parseInt(productId)],
+                    0
+                )}
+                $
+            </div>
         </div>
     )
 }
