@@ -28,10 +28,27 @@ const App = (props: Props) => {
         }))
     }
 
+    const removeProductFromCart = (id: number) => {
+        setProductsInCart((prevState) => {
+            let prevProductsInCart = { ...prevState }
+            delete prevProductsInCart[id]
+            return prevProductsInCart
+        })
+    }
+
+    /* const removeProductFromCart = (id: number) => {
+        let prevProductsInCart = { ...productsInCart }
+        delete prevProductsInCart[id]
+        setProductsInCart(prevProductsInCart)
+    } варіант запису але не зовсим точно може працювати*/
+
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header productsInCart={productsInCart} />
+            <button onClickCapture={() => removeProductFromCart(1)}>
+                Delete product
+            </button>
             <Container sx={{ padding: '60px 0' }}>
                 <Routes>
                     <Route
