@@ -8,6 +8,7 @@ import { Routes } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import { Container } from '@mui/system'
 import CartPage from 'pages/Cart/CartPage'
+import { omit } from 'lodash'
 
 type Props = {}
 
@@ -29,18 +30,8 @@ const App = (props: Props) => {
     }
 
     const removeProductFromCart = (id: number) => {
-        setProductsInCart((prevState) => {
-            let prevProductsInCart = { ...prevState }
-            delete prevProductsInCart[id]
-            return prevProductsInCart
-        })
+        setProductsInCart((prevState) => omit(prevState, [id]))
     }
-
-    /* const removeProductFromCart = (id: number) => {
-        let prevProductsInCart = { ...productsInCart }
-        delete prevProductsInCart[id]
-        setProductsInCart(prevProductsInCart)
-    } варіант запису але не зовсим точно може працювати*/
 
     return (
         <StyledEngineProvider injectFirst>
