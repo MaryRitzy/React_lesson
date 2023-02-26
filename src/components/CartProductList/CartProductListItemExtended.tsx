@@ -34,6 +34,7 @@ const CartProductListItemExtended = ({
                         onIncrement={() =>
                             changeProductQuantity(product.id, productCount + 1)
                         }
+                        minCount={0}
                     />
                 </CardContent>
                 <CardActions>
